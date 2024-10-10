@@ -1,0 +1,35 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+#login-section {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#forum-section {
+    margin: 20px;
+}
+
+button {
+    margin: 5px;
+}
+
+/* styles.css */
+#chat-display {
+    border: 1px solid #ccc;
+    padding: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"] {
+    width: 80%;
+  }
+  
+  button {
+    margin: 5px;
+  }
+  

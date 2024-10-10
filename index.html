@@ -1,0 +1,30 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat and Video Forum</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="spy.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="login-section">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Enter username">
+        <input type="password" id="password" placeholder="Enter password">
+        <button id="login-btn">Login</button>
+        <p id="login-error"></p>
+    </div>
+
+    <div id="forum-section" style="display:none;">
+        <h1>Welcome to the Forum</h1>
+        <button id="create-forum-btn" style="display:none;">Create Forum</button>
+        <div id="forums-list"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
