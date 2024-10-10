@@ -2,7 +2,7 @@
 
 // Pre-made accounts
 const accounts = [
-    { username: "Sameer", password: "HelloSam", isAdmin: true },
+    { username: "User1", password: "password1", isAdmin: true },
     { username: "User2", password: "password2", isAdmin: true },
     { username: "User3", password: "password3", isAdmin: true },
     { username: "User4", password: "password4", isAdmin: true },
