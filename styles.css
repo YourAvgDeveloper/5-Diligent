@@ -1,35 +1,33 @@
-/* styles.css */
 body {
     font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
 }
 
-#login-section {
-    text-align: center;
-    margin-top: 50px;
-}
-
-#forum-section {
-    margin: 20px;
-}
-
-button {
-    margin: 5px;
-}
-
-/* styles.css */
-#chat-display {
+#login, #chat {
     border: 1px solid #ccc;
-    padding: 10px;
-    max-height: 300px;
-    overflow-y: auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#chat-window {
+    height: 300px;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
     margin-bottom: 10px;
-  }
-  
-  input[type="text"] {
-    width: 80%;
-  }
-  
-  button {
-    margin: 5px;
-  }
+}
+
+#output {
+    padding: 10px;
+}
+
+#message {
+    width: calc(100% - 60px);
+    padding: 10px;
+}
+
   
