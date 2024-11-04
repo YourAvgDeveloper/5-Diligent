@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Diligent Classroom</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        h1 {
+            color: #2a52be;
+        }
+        .section {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #e6f7ff;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 5px 0;
+        }
+        .button {
+            background-color: #2a52be;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #1f3e8a;
+        }
+        .dark-mode {
+            background-color: #333;
+            color: #f0f8ff;
+        }
+        .section-dark {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to 5 Diligent's Classroom Website</h1>
+    <button class="button" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+    <!-- Question of the Day Section -->
+    <div class="section" id="qotd-section">
+        <h2>Question of the Day</h2>
+        <p id="qotd">Loading...</p>
+    </div>
+
+    <!-- Math Problem of the Day Section -->
+    <div class="section" id="math-section">
+        <h2>Math Problem of the Day</h2>
+        <p id="mathProblem">Loading...</p>
+    </div>
+
+    <!-- Fun Fact Section -->
+    <div class="section" id="fact-section">
+        <h2>Fun Fact of the Day</h2>
+        <p id="funFact">Loading...</p>
+    </div>
+
+    <!-- Quote of the Day Section -->
+    <div class="section" id="quote-section">
+        <h2>Quote of the Day</h2>
+        <p id="quote">Loading...</p>
+    </div>
+
+    <!-- Daily Joke Section -->
+    <div class="section" id="joke-section">
+        <h2>Joke of the Day</h2>
+        <p id="joke">Loading...</p>
+    </div>
+
+    <!-- Classmates Section -->
+    <div class="section" id="classmates-section">
+        <h2>Classmates</h2>
+        <button class="button" onclick="toggleClassmates()">Show/Hide Classmates</button>
+        <div id="classmates" style="display: none;">
+            <!-- Boys Section -->
+            <h3>Boys</h3>
+            <ul id="boys-list">
+                <li>Ali</li>
+                <li>Ahmed</li>
+                <li>Omar</li>
+                <!-- Add more boys here -->
+            </ul>
+
+            <!-- Girls Section -->
+            <h3>Girls</h3>
+            <ul id="girls-list">
+                <li>Fatima</li>
+                <li>Sara</li>
+                <li>Aisha</li>
+                <!-- Add more girls here -->
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            "What is the largest planet in our solar system?",
+            "What is the capital of France?",
+            "Who wrote 'To Kill a Mockingbird'?",
+            "What is the speed of light?",
+            "How many continents are there on Earth?"
+        ];
+
+        const mathProblems = [
+            "Solve: 12 + 8 x 3 - 5 = ?",
+            "What is 50 divided by 5?",
+            "Find the area of a rectangle with length 5 and width 3.",
+            "What is the square root of 81?",
+            "Solve: 7 x 6 - 4 + 9 = ?"
+        ];
+
+        const funFacts = [
+            "Honey never spoils. You could eat 3,000-year-old honey!",
+            "Bananas are berries, but strawberries aren’t.",
+            "A group of flamingos is called a 'flamboyance'.",
+            "Octopuses have three hearts.",
+            "Sharks are the only fish that can blink with both eyes."
+        ];
+
+        const quotes = [
+            "Believe you can and you're halfway there.",
+            "Success is not final; failure is not fatal: It is the courage to continue that counts.",
+            "Hardships often prepare ordinary people for an extraordinary destiny.",
+            "The only limit to our realization of tomorrow is our doubts of today.",
+            "Your attitude, not your aptitude, will determine your altitude."
+        ];
+
+        const jokes = [
+            "Why did the math book look sad? It had too many problems.",
+            "What do you call fake spaghetti? An impasta!",
+            "Why don’t scientists trust atoms? Because they make up everything!",
+            "Why was the math teacher late? He took the rhombus.",
+            "Why did the scarecrow win an award? Because he was outstanding in his field!"
+        ];
+
+        function updateDailyContent() {
+            const today = new Date();
+            const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));
+
+            document.getElementById("qotd").innerText = questions[dayOfYear % questions.length];
+            document.getElementById("mathProblem").innerText = mathProblems[dayOfYear % mathProblems.length];
+            document.getElementById("funFact").innerText = funFacts[dayOfYear % funFacts.length];
+            document.getElementById("quote").innerText = quotes[dayOfYear % quotes.length];
+            document.getElementById("joke").innerText = jokes[dayOfYear % jokes.length];
+        }
+
+        function toggleClassmates() {
+            const classmatesList = document.getElementById('classmates');
+            classmatesList.style.display = classmatesList.style.display === 'none' || classmatesList.style.display === '' ? 'block' : 'none';
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.toggle('section-dark'));
+        }
+
+        updateDailyContent();
+    </script>
+
+</body>
+</html>
